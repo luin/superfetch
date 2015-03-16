@@ -94,4 +94,32 @@ describe('superfetch', function () {
       });
     });
   });
+
+  describe('request', function () {
+    it('should use the second param as the body', function (done) {
+      superfetch.post('http://a.com', { a: 1 }).then(function (res) {
+        expect(res).to.eql({
+          method: 'post',
+          url: 'http://a.com',
+          json: { a: 1 },
+          headers: {}
+        });
+        done();
+      });
+    });
+  });
+
+  describe('.defaults', function () {
+    it('should set the default options', function (done) {
+      var d = superfetch.defaults({ name: 'bob' });
+      d.post('http://a.com').then(function (res) {
+        expect(res).to.eql({
+          method: 'post',
+          url: 'http://a.com',
+          name: 'bob'
+        });
+        done();
+      });
+    });
+  });
 });

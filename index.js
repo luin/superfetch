@@ -4,7 +4,7 @@ var request = require('request');
 
 var superfetch = module.exports = {};
 
-var defaults = {
+var defaultsOptions = {
   options: { headers: {} },
 };
 
@@ -22,6 +22,9 @@ var proto = {
   },
   header: function (key, value) {
     var clonedData = _.cloneDeep(this.__data);
+    if (!clonedData.options.headers || typeof clonedData.options.headers !== 'object') {
+      clonedData.options.headers = {};
+    }
     if (typeof key === 'object') {
       for (var k in key) {
         clonedData.options.headers[k] = key[k];
@@ -36,11 +39,21 @@ var proto = {
   }
 };
 
-methods.forEach(function (method) {
-  var data = _.cloneDeep(defaults);
-  data.options.method = method;
-  superfetch[method] = wrap(data);
-});
+function defaults(obj, options) {
+  methods.forEach(function (method) {
+    var data = _.cloneDeep(options);
+    data.options.method = method;
+    obj[method] = wrap(data);
+  });
+}
+
+defaults(superfetch, defaultsOptions);
+
+superfetch.defaults = function (options) {
+  var instance = {};
+  defaults(instance, { options: options });
+  return instance;
+};
 
 function wrap (data) {
   var newF = fetch.bind(data);
@@ -53,9 +66,12 @@ function wrap (data) {
   return newF;
 }
 
-function fetch (url) {
+function fetch (url, body) {
   var req = _.cloneDeep(this.options);
   req.url = url;
+  if (body) {
+    req.json = body;
+  }
 
   var promise;
   if (req.transform && req.transform.request) {

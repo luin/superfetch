@@ -38,6 +38,12 @@ API
 2. `VerbInstance.option(settingObj)` or `VerbInstance.option(key, value)` will returns a new VerbInstance with the specified settings setted. All options will be passed to the request library except the `transform` which will be introduced later.
 3. `VerbInstance.header(headerObj)` or `VerbInstance.header(key, value)` is an alias for `VerbInstance.option('headers', headerObj)`.
 4. `VerbInstance.auth(user, pass)` is an alias for `VerbInstance.option('auth', { user: user, pass: pass })`.
+5. `VerbInstance(url[, body])` will send a request, and the optionally `body` will sets the `json` property.
+6. `fetch.defaults(defaultOptions)` will create a new fetch instance with a different default options:
+```javascript
+var d = fetch.defaults({ encoding: 'utf8' });
+d.post('http://example.com').then(//
+```
 
 Transform
 ---------
