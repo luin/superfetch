@@ -17,9 +17,9 @@ Super easy to use
 ```javascript
 var fetch = require('superfetch');
 fetch.get('http://example.com').then(function (body) {
-  // when the status code begins with "2", only the response body is returned.
+  // when the status code begins with "2", the response body will be returned.
 }).catch(function (response) {
-  // otherwise, the whole response(including status code) is returned.
+  // otherwise, the whole response(including headers) is returned.
 });
 
 // It's easy to pass the option to the request library

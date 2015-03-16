@@ -15,10 +15,11 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^3.5.0",
-    "methods": "^1.1.1",
-    "proxyquire": "^1.4.0"
+    "methods": "^1.1.1"
   },
   "devDependencies": {
-    "chai": "^2.1.2"
+    "chai": "^2.1.2",
+    "mocha": "^2.2.1",
+    "proxyquire": "^1.4.0"
   }
 }
