@@ -1,6 +1,7 @@
 var _ = require('lodash');
 var methods = require('methods');
 var request = require('request');
+var Promise = require('bluebird');
 
 var superfetch = module.exports = {};
 
