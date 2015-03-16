@@ -1,0 +1,24 @@
+{
+  "name": "superfetch",
+  "version": "1.0.0",
+  "description": "A super powerful node.js HTTP client with the support of promise.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "project",
+    "http",
+    "client"
+  ],
+  "author": "luin <i@zihua.li>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^3.5.0",
+    "methods": "^1.1.1",
+    "proxyquire": "^1.4.0"
+  },
+  "devDependencies": {
+    "chai": "^2.1.2"
+  }
+}
