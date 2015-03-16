@@ -65,3 +65,12 @@ fetch.option('transform', {
 }).then(function (resp) {
 });
 ```
+
+Run tests
+---------
+
+```shell
+$ npm test
+```
+
+More examples can refer to the `test` directory.
