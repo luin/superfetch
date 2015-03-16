@@ -2,6 +2,8 @@ SuperFetch
 ==========
 SuperFetch is a promise-based HTTP client for Node.js. It's based on the [request](https://github.com/request/request) library and has an elegant interface.
 
+[![Build Status](https://travis-ci.org/luin/superfetch.png?branch=master)](https://travis-ci.org/luin/superfetch)
+
 Install
 ------
 
