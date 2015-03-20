@@ -34,8 +34,8 @@ base.option({ thirdSetting: 'zoo' })('http://example2.com');
 API
 ----
 
-1. `fetch[http verb]` will returns a VerbInstance.
-2. `VerbInstance.option(settingObj)` or `VerbInstance.option(key, value)` will returns a new VerbInstance with the specified settings setted. All options will be passed to the request library except the `transform` which will be introduced later.
+1. `fetch[http verb]` will return a VerbInstance.
+2. `VerbInstance.option(settingObj)` or `VerbInstance.option(key, value)` will return a new VerbInstance with the specified settings setted. All options will be passed to the request library except the `transform` which will be introduced later.
 3. `VerbInstance.header(headerObj)` or `VerbInstance.header(key, value)` is an alias for `VerbInstance.option('headers', headerObj)`.
 4. `VerbInstance.auth(user, pass)` is an alias for `VerbInstance.option('auth', { user: user, pass: pass })`.
 5. `VerbInstance(url[, body])` will send a request, and the optionally `body` sets the `json` property of the request library.
