@@ -74,3 +74,11 @@ $ npm test
 ```
 
 More examples can refer to the `test` directory.
+
+Why build another HTTP client?
+-------------
+I'm aware that there are many Node.js HTTP client library such as [request](https://github.com/request/request), [superagent](https://github.com/visionmedia/superagent) and [axios](https://github.com/mzabriskie/axios). However, I find out none of these library exactly suit my needs. What I want is a library that is powerful, supports promise and has an elegant API, while the fact is request lib is powerful but doesn't support promise, superagent has an elegant API but doesn't as powerful as request lib, and axios lib supports promise but lacks many features I want. So here is SuperFetch.
+
+Articles
+-------
+[DailyJs: AniCollection, SuperFetch](http://dailyjs.com/2015/03/19/anicollection-superfetch/)
