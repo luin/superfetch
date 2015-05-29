@@ -36,7 +36,7 @@ var proto = {
     return wrap(clonedData);
   },
   auth: function (user, pass) {
-    return this.option(auth, { user: user, pass: pass });
+    return this.option('auth', { user: user, pass: pass });
   }
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "superfetch",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A super powerful node.js HTTP client with the support of promise.",
   "main": "index.js",
   "scripts": {
